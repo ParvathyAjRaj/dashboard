@@ -1,7 +1,8 @@
 import { DollarCircleOutlined, ShoppingCartOutlined, ShoppingOutlined, UserOutlined } from "@ant-design/icons";
-import { Typography,Space,Card, Statistic, Table } from "antd";
-import React, { useEffect, useState } from "react";
-import { getOrders } from "../API/api";
+import { Typography,Space} from "antd";
+import RecentOrders from "../Components/RecentOrdersTable";
+import DashboardCard from "../Components/DashboardCard";
+import RevenueGraph from "../Components/RevenueGraph";
 
 function Dashboard(){
 return(
@@ -41,67 +42,14 @@ return(
                             padding:8}}/>} title="Revenue" value={12345}/>
         </Space>
 
-        {/* Dashboard Table */}
-        <Card>
-            <Space>
-                <RecentOrders/>
-            </Space>
-        </Card>
+        {/* Dashboard Table  and Dashboard Graph*/}
+        
+        <Space>
+            <RecentOrders/>
+            <RevenueGraph/>    
+        </Space>
     </Space>
 );
-}
-
-function DashboardCard({icon,title,value}){
-    return(
-        <Card>
-            <Space direction="horizontal">
-                {icon}
-                <Statistic title={title} value={value}/>
-            </Space>
-        </Card>
-    );
-}
-
-function RecentOrders(){
-    const columns = [
-        {
-            title: 'Title',
-            dataIndex: 'title',
-            key: 'title',
-        },
-        {
-            title: 'Quantity',
-            dataIndex: 'quantity',
-            key: 'quantity',
-        },
-        {
-            title: 'Price',
-            dataIndex: 'discountedPrice',
-            key: 'discountedPrice',
-        },
-        ]
-
-    const [dataSource,setDataSource] = useState([]);
-    const [loading,setLoading] = useState(false);
-
-    useEffect(() => {
-        setLoading(true);
-        getOrders().then((res) => {
-            res.carts.map((eachCart) => {
-                return(
-                    setDataSource(eachCart.products.splice(0,3))
-                )
-                })
-            setLoading(false);
-        })
-    },[])
-
-    return(
-        <>
-            <Typography.Text>Recent Orders</Typography.Text>
-            <Table dataSource={dataSource} columns={columns} pagination={false}/>
-        </>
-    )
 }
 
 export default Dashboard

@@ -7,3 +7,10 @@
     margin-right: 2%;
     margin-left: 2%;
 }
+
+@media (max-width:800px){
+    .footer{
+        width:400%;
+        margin-left: 10%;
+    }
+}

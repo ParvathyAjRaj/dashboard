@@ -12,7 +12,7 @@ return(
             alt="sample"
             src="motivation_img.jpg"
         />
-        <Typography.Title style={{paddingBottom:5}}>Crypto Dashboard</Typography.Title>
+        <Typography.Title style={{paddingBottom:5,marginRight:50}}>Cart Dashboard</Typography.Title>
         <Space>
             <Badge count={10} dot>
                 <MailOutlined style={{fontSize:24 , paddingRight:5}}></MailOutlined>

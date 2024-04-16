@@ -1,13 +1,18 @@
 
 /* Laptop view */
-@media (min-width : 800px) {
+@media (min-width : 600px) {
     .profile{
         width: 6vw !important;
         height:12vh !important;
+        margin-left: 40%;
     }
 
     h1{
         font-size: 300% !important;
+        margin-left: 2%;
+    }
+    .header{
+        margin-right: 1%;
     }
 }
 
@@ -23,7 +28,9 @@
     }
 
     .header{
-        width:300%;
+        width:400%;
+        margin-left: 10%;
+        
     }
 }
 
@@ -35,8 +42,6 @@
     padding-bottom: 40px;
     padding-top: 10px;
     border-bottom: 1px solid black;
-    margin-right: 2%;
-    margin-left: 2%;
 }
 
 .profile{
