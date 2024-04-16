@@ -10,7 +10,7 @@ import {
 } from 'chart.js';
 import { Bar } from 'react-chartjs-2';
 import { Card } from 'antd';
-import { getCartDetails } from '../API/api';
+import { getRevenue } from '../API/api';
 
 ChartJS.register(
   CategoryScale,
@@ -29,7 +29,7 @@ function RevenueGraph(){
     })
 
     useEffect(()=>{
-      getCartDetails().then(res=>{
+      getRevenue().then(res=>{
             const labels = res.carts.map((cart)=>{return (`User${cart.userId}`)});
             const data = res.carts.map((cart)=>{return (cart.discountedTotal)});
             const dataSource = {

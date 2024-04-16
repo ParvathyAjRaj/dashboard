@@ -50,7 +50,7 @@ function Customers(){
     return(
         <Space direction="vertical">
             <Typography.Title level={4}>Inventory</Typography.Title>
-            <Table dataSource={dataSource} columns={columns} pagination={{pageSize:10}} loading={loading}/>
+            <Table dataSource={dataSource} columns={columns} pagination={{pageSize:8}} loading={loading}/>
         </Space>
     );
 }

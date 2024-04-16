@@ -52,7 +52,7 @@ function Orders(){
     return(
         <Space direction="vertical">
             <Typography.Title level={4}>Orders</Typography.Title>
-            <Table dataSource={dataSource} columns={columns} pagination={{pageSize:10}} loading={loading}/>
+            <Table dataSource={dataSource} columns={columns} pagination={{pageSize:8}} loading={loading}/>
         </Space>
     );
 }

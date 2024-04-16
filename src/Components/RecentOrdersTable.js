@@ -1,5 +1,5 @@
 import { Typography, Table,Card } from "antd";
-import { getCartDetails } from "../API/api";
+import { getRevenue } from "../API/api";
 import React, { useEffect, useState } from "react";
 
 function RecentOrders(){
@@ -26,7 +26,7 @@ function RecentOrders(){
 
     useEffect(() => {
         setLoading(true);
-        getCartDetails().then((res) => {
+        getRevenue().then((res) => {
             res.carts.map((eachCart) => {
                 return(
                     setDataSource(eachCart.products)
