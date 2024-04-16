@@ -1,5 +1,5 @@
 import React from "react";
-import { Typography,Space,Table, Avatar,Rate } from "antd";
+import { Typography,Space,Table, Avatar} from "antd";
 import {useState, useEffect} from "react"; 
 import { getCustomers } from "../API/api";
 
